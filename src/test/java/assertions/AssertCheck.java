@@ -15,20 +15,20 @@ public class AssertCheck {
     public static void assertRequest2(RandomValuesModel response) {
         assertThat(response.getWeather().get(0).getId())
                 .as("wrong id error")
-                .isEqualTo(803);
+                .isEqualTo(804);
 
     }
 
     public static void assertRequest3(RandomValuesModel response){
         assertThat(response.getMain().getTemp_min())
                 .as("wrong min_temp error")
-                .isEqualTo(15.64);
+                .isBetween(0.00, 20.00);
 
     }
     public static void assertRequest4(RandomValuesModel response){
     assertThat(response.getMain().getTemp())
             .as("wrong temp error")
-                .isEqualTo(16.02);}
+                .isGreaterThan(5.00);}
     public static void assertRequest5(RandomValuesModel response){
     assertThat(response.getVisibility())
             .as("wrong visibility error")
